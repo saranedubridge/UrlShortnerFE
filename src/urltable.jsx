@@ -11,7 +11,7 @@ const URLTable = () => {
 
     useEffect(() => {
         const fetchURLs = async () => {
-            const response = await fetch(`http://localhost:3001/api/table?page=${currentPage}&search=${searchTerm}`);
+            const response = await fetch(`https://urlshortnerbe.onrender.com/api/table?page=${currentPage}&search=${searchTerm}`);
             const data = await response.json();
             setUrls(data.urls);
             setTotalPages(data.totalPages);
@@ -63,7 +63,7 @@ const URLTable = () => {
                 <tbody>
                     {urls.map((url, index) => (
                         <tr key={index}>
-                            <td>{`http://localhost:3001/${url.shortUrl}`}</td>
+                            <td>{`https://urlshortnerbe.onrender.com/${url.shortUrl}`}</td>
                             <td>{url.longUrl}</td>
                             <td>{new Date(url.createdAt).toLocaleDateString()}</td>
                             <td>

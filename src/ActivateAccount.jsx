@@ -13,7 +13,7 @@ function ActivateAccount() {
     const [isError, setIsError] = useState(false); // Indicates if an error occurred during activation
 
     useEffect(() => {
-        axios.post(`http://localhost:3001/api/users/activate/${activationToken}`)
+        axios.post(`https://urlshortnerbe.onrender.com/api/users/activate/${activationToken}`)
             .then(response => {
                 
                 setMessage(response.data.message);
